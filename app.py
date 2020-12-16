@@ -24,6 +24,16 @@ app.layout = html.Div([
 ])
 
 # Update count
+def increment_count(data):
+    data['clicks'] = data['clicks'] + 1
+
+    return data
+
+def clear_count(data):
+    data['clicks'] = 0
+    
+    return data
+
 @app.callback(
     Output('store', 'data'),
     [
@@ -39,24 +49,14 @@ def update_count(*values):
     data = values[-1]
     data = data or {'clicks': 0}
 
-    data['clicks'] = data['clicks'] + 1
+    ctx = dash.callback_context
+    if ctx.triggered:
+        button_id = ctx.triggered[0]['prop_id'].split('.')[0]
 
-    return data
-
-# Clear count
-#@app.callback(
-#    Output('store', 'data'),
-#    State('store', 'data'),
-#)
-#def clear_count(n_clicks, data):
-#    if n_clicks is None:
-#        raise PreventUpdate
-#
-#    data = data or {'clicks': 0}
-#
-#    data['clicks'] = 0
-#
-#    return data
+        if (button_id == "count"):
+            return increment_count(data)
+        elif (button_id == "clear"):
+            return clear_count(data)
 
 # Update output
 @app.callback(
@@ -67,8 +67,6 @@ def update_output(data):
     data = data or {}
 
     return 'The count is {}'.format(data.get('clicks',0))
-
-
 
 if __name__ == '__main__':
     app.run_server(debug=True, host='0.0.0.0', port=8000)
