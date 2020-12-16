@@ -19,3 +19,5 @@ This has debug mode enabled and will automatically re-load the page when you edi
 dashboard source code.
 
 To try production environment, use `docker-compose up --build prod`.
+
+Open http://localhost:8000/ to access locally running dash dashboard.

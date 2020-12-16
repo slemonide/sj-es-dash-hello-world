@@ -5,6 +5,7 @@ services:
     build: "."
     ports:
         - "127.0.0.1:8000:8000"
+    restart: "unless-stopped"
 
   dev:
     build: "."
@@ -13,3 +14,4 @@ services:
     command: ["python", "app.py"]
     ports:
         - "127.0.0.1:8000:8000"
+    restart: "unless-stopped"
