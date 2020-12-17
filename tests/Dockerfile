@@ -11,3 +11,4 @@ WORKDIR /wd
 RUN pip3 install -r requirements.txt
 
 # Finally, run gunicorn.
+CMD [ "ptw" ]

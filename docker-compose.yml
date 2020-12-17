@@ -22,8 +22,7 @@ services:
     build: "./tests"
     volumes:
      - "./tests:/wd"
-    stdin_open: true
-    tty: true
+     - "./src:/wd/src"
     networks:
       - tests
 
