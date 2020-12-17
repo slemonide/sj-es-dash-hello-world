@@ -5,13 +5,27 @@ services:
     build: "."
     ports:
         - "127.0.0.1:8000:8000"
-    restart: "unless-stopped"
+    networks:
+      - tests
 
   dev:
     build: "."
     volumes:
-     - "./:/wd"
+     - "./src:/wd/src"
     command: ["python", "app.py"]
     ports:
         - "127.0.0.1:8000:8000"
-    restart: "unless-stopped"
+    networks:
+      - tests
+
+  tests:
+    build: "./tests"
+    volumes:
+     - "./tests:/wd"
+    stdin_open: true
+    tty: true
+    networks:
+      - tests
+
+networks:
+  tests:
