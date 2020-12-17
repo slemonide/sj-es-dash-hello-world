@@ -47,7 +47,7 @@ def test_count_store_increment_none_state():
 def helper_test_count_store_increment_non_null_state(value):
     json = deepcopy(base_json)
     json["changedPropIds"] = ["count.n_clicks"]
-    json["state"] = [{ "id":"store", "property": "data", "value": {"clicks": value} }]
+    json["state"] = [{ "id":"store", "property": "data", "value": {"clicks": value }}]
 
     response = make_json_request(json)
 
