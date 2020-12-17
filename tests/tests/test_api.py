@@ -1,7 +1,7 @@
 import requests
 from copy import deepcopy
 
-url = "http://dev:8000"
+url = "http://dev:8050"
 api_url = url + "/_dash-update-component"
 
 ## Test Helpers

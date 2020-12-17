@@ -21,6 +21,7 @@ dashboard source code.
 To try production environment, use `docker-compose up --build prod`.
 
 Open http://localhost:8000/ to access locally running dash dashboard.
+Open http://localhost:8050/ for development server.
 
 ## Unit testing
 
@@ -38,6 +39,9 @@ your web browser.
 Right click on a web page and select "Inspect Element" or something similiar.
 Then select "Network". There, you would be able to see requests that web page
 makes. Try clicking some buttons to see if you can intercept some "POST" requests.
+
+You will get a cleaner picture if you do this while running a production version
+as it doesn't make any additional unrelated requests.
 
 Click on one and study "Request" and "Response".
 
