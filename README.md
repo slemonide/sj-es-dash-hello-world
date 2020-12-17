@@ -50,3 +50,8 @@ Also see tests provided for examples.
 Unfortunately, dash currently doesn't provide official documentation for this API
 so you have to learn it by observation.
 
+## Load testing
+
+To run load tests, do `docker-compose up load_tests`. Then open http://127.0.0.1:8089/
+For host, use `http://prod:8000` or `http://dev:8050`. Specify number of users
+and user increment as you like.
