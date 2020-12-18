@@ -10,5 +10,5 @@ WORKDIR /wd
 # Install Python dependencies.
 RUN pip3 install -r requirements.txt
 
-# Finally, run gunicorn.
+# Finally, run pytest-watch.
 CMD [ "ptw" ]
