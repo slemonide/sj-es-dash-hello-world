@@ -16,7 +16,7 @@ app = dash.Dash(
 app.layout = html.Div([
     dcc.Store(id='store'),
 
-    html.Div("Hello world. I can auto update!"),
+    html.Div("Hello world. I can auto update! One more test!"),
 
     html.Button('Count', id='count'),
     html.Button('Clear', id='clear'),
